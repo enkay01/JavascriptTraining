@@ -1,0 +1,19 @@
+{
+  "name": "javascripttraining",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enkay01/JavascriptTraining.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enkay01/JavascriptTraining/issues"
+  },
+  "homepage": "https://github.com/enkay01/JavascriptTraining#readme"
+}
