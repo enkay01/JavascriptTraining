@@ -4,15 +4,15 @@ function calculateAnswer(operator, operands) {
     for (let x = 1; x < operands.length; x++) {
         switch (operator){
             case '+':
-                return numbers.reduce((acc, curr) => acc + curr, 0);
+                return operands.reduce((acc, curr) => acc + curr, 0);
             case '-':
-                return numbers.slice(1).reduce((acc, curr) => acc - curr, numbers[0]);
+                return operands.slice(1).reduce((acc, curr) => acc - curr, operands[0]);
             case '*':
-                return numbers.reduce((acc, curr) => acc * curr, 1);
+                return operands.reduce((acc, curr) => acc * curr, 1);
             case '/':
-                return numbers.slice(1).filter(x => x !== 0).reduce((acc, curr) => acc / curr, numbers[0]);
-            default:
-                throw new Error(`The operator '${operator}' is not supported`);            }
+                return operands.slice(1).filter(x => x !== 0).reduce((acc, curr) => acc / curr, operands[0]);
+            
+        }
     }
     return answer;
 }
@@ -25,9 +25,17 @@ function getNArray(operator) {
     return operands;
 }
 
-
+function isValidOp(op){
+    return ['+', '-', '*', '/'].includes(op);
+}
 function getOperator() {
-    return userInput.getPromptedInput('Please enter the operator:');
+    let op;
+    do{
+        op = userInput.getPromptedInput('Please enter the operator:');
+
+    }while(!isValidOp(op) && (console.log(`The operator '${op}' is not supported`) || true))
+
+    return op; 
 }
 
 
