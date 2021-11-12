@@ -4,17 +4,13 @@ function calculateAnswer(operator, operands) {
     for (let x = 1; x < operands.length; x++) {
         switch (operator){
             case '+':
-                answer += operands[x];
-                break;
+                return numbers.reduce((acc, curr) => acc + curr, 0);
             case '-':
-                answer -= operands[x];
-                break;
+                return numbers.slice(1).reduce((acc, curr) => acc - curr, numbers[0]);
             case '*':
-                answer *= operands[x];
-                break;
+                return numbers.reduce((acc, curr) => acc * curr, 1);
             case '/':
-                answer /= operands[x];
-                break;
+                return numbers.slice(1).filter(x => x !== 0).reduce((acc, curr) => acc / curr, numbers[0]);
         }
     }
     return answer;
