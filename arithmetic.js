@@ -11,7 +11,8 @@ function calculateAnswer(operator, operands) {
                 return numbers.reduce((acc, curr) => acc * curr, 1);
             case '/':
                 return numbers.slice(1).filter(x => x !== 0).reduce((acc, curr) => acc / curr, numbers[0]);
-        }
+            default:
+                throw new Error(`The operator '${operator}' is not supported`);            }
     }
     return answer;
 }
