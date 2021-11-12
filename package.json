@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/enkay01/JavascriptTraining/issues"
   },
-  "homepage": "https://github.com/enkay01/JavascriptTraining#readme"
+  "homepage": "https://github.com/enkay01/JavascriptTraining#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }

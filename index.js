@@ -2,6 +2,7 @@ const readline = require('readline-sync');
 
 const NUMBER_MODE = '1';
 const VOWEL_MODE = '2';
+const EXIT_MODE = '3';
 
 function printWelcomeMessage() {
     console.log('\nWelcome to the calculator!\n==============================');
@@ -22,7 +23,7 @@ function getNumberInputWithPrompt(prompt) {
 
 function getCalculationMode() {
     console.log('Which calculator mode do you want?');
-    return getPromptedInput(`\ ${NUMBER_MODE}) Arithmetic ${VOWEL_MODE}) Vowel counting`);
+    return getPromptedInput(`\ ${NUMBER_MODE}) Arithmetic ${VOWEL_MODE}) Vowel counting ${EXIT_MODE}) Exit`);
 }
 
 function getOperator() {
@@ -94,6 +95,9 @@ while (true) {
         performOneArithmeticCalculation();
     } else if (calculationMode === VOWEL_MODE) {
         performVowelCount();
+    }
+    else if(calculationMode == EXIT_MODE){
+        break;
     }
 }
 
